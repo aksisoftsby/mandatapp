@@ -232,3 +232,6 @@
 .nav-footer li a:hover{
   text-decoration: underline;
 }
+.table_center{
+  text-align: center;
+}

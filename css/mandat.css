@@ -235,3 +235,14 @@
 .table_center{
   text-align: center;
 }
+.docs-header a{
+  color: #000;
+}
+a{
+  color: #333;
+  text-decoration: none;
+}
+a:hover{
+  color: #000;
+  text-decoration: underline;
+}

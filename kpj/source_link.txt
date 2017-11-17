@@ -1,1 +1,2 @@
 http://kpujambi.dony.asia/android/menu.php
+http://kpujambi.dony.asia/android/menu-reorder.php

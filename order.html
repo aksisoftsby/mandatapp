@@ -43,21 +43,21 @@
           <div class="row">
             <div class="four columns">
               <label for="nama">Nama Kontak</label>
-              <input class="u-full-width" type="text" name="nama">
+              <input class="u-full-width" type="text" name="nama" required>
             </div>
             <div class="four columns">
               <label for="email">Email</label>
-              <input class="u-full-width" type="email" name="email">
+              <input class="u-full-width" type="email" name="email" required>
             </div>
             <div class="four columns">
               <label for="nohp">No HP/Whatsapp</label>
-              <input class="u-full-width" type="text" name="nohp">
+              <input class="u-full-width" type="text" name="nohp" required>
             </div>
           </div>
           <label for="instansi">Nama Instansi/Lembaga</label>
-          <input class="u-full-width" type="text" name="instansi">
+          <input class="u-full-width" type="text" name="instansi" required>
           <label for="sewa">Paket Sewa Mandat</label>
-          <select class="u-full-width" id="sewa">
+          <select class="u-full-width" id="sewa" required>
             <option value="150MB">Rp. 1.500.000/tahun 150MB</option>
             <option value="300MB">Rp. 2.500.000/tahun 300MB</option>
             <option value="MORE">Lebih dari 300 MB</option>
@@ -74,6 +74,7 @@
           $(".status").empty().html('menunggu terkirim ke server ...');
           $(this).ajaxSubmit({
             error: function (xhr) {
+              console.log(xhr);
               $(".status").empty().html('Error: ' + xhr.status);
               return false;
             },

@@ -28,7 +28,6 @@
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
-    <script src="javascript/mandat.js"></script>
     <link rel="icon" type="image/png" href="images/logo.svg">
 
   </head>
@@ -40,7 +39,7 @@
         <h6 class="docs-header">Form order</h6>
         <p>Mohon lengkapi data termasuk email dan nomor telpon dengan benar. 
           Setelah data dikirimkan, kami akan mengirimkan invoice ke email anda.</p>
-        <form id="forms" action="http://demo.mandatapp.com/order">
+        <form id="forms" method="POST" action="http://demo.mandatapp.com/order">
           <div class="row">
             <div class="four columns">
               <label for="nama">Nama Kontak</label>

@@ -27,6 +27,7 @@
     <!-- Favicon
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
     <script src="javascript/mandat.js"></script>
     <link rel="icon" type="image/png" href="images/logo.svg">
 
@@ -34,17 +35,12 @@
   <body class="code-snippets-visible">
 
     <div class="container">
-      <section class="header">
-        <h2 class="title">Order sewa aplikasi <i>Mandat-app</i>.</h2>
-      </section>
-    </div>
-
-    <div class="container">
       <div class="docs-section" id="sewa-mandat">
+        <h2 class="title">Order sewa aplikasi <i>Mandat-app</i>.</h2>
         <h6 class="docs-header">Form order</h6>
         <p>Mohon lengkapi data termasuk email dan nomor telpon dengan benar. 
           Setelah data dikirimkan, kami akan mengirimkan invoice ke email anda.</p>
-        <form>
+        <form id="forms" action="http://demo.mandatapp.com/order">
           <div class="row">
             <div class="four columns">
               <label for="nama">Nama Kontak</label>
@@ -61,13 +57,38 @@
           </div>
           <label for="instansi">Nama Instansi/Lembaga</label>
           <input class="u-full-width" type="text" name="instansi">
-          <label for="instansi">Sewa Mandat</label>
-          <input class="u-full-width" type="text" name="instansi">
-          <input class="button-primary" type="submit" value="Submit">
+          <label for="sewa">Paket Sewa Mandat</label>
+          <select class="u-full-width" id="sewa">
+            <option value="150MB">Rp. 1.500.000/tahun 150MB</option>
+            <option value="300MB">Rp. 2.500.000/tahun 300MB</option>
+            <option value="MORE">Lebih dari 300 MB</option>
+          </select>
+          <input class="button-primary" type="submit" value="Pesan">
+          <p class="status"></p>
         </form>
+        <p>Setting/Perubahan domain bisa diganti sewaktu-waktu tanpa melalui migrasi file/database.</p>
       </div>
     </div>
-
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#forms').submit(function () {
+          $(".status").empty().html('menunggu terkirim ke server ...');
+          $(this).ajaxSubmit({
+            error: function (xhr) {
+              $(".status").empty().html('Error: ' + xhr.status);
+              return false;
+            },
+            success: function (response) {
+              $("#sewa-mandat").empty().html('<p>Terima kasih data order anda sudah '
+                + 'terkirim, mohon menunggu konfirmasi maksimal 1x24 jam kami akan '
+                + 'menghubungi anda.</p>');
+              return false;
+            }
+          })
+          return false;
+        });
+      })
+    </script>
     <div class="container">
       <div class="docs-section" id="social-media">
         <h6 class="docs-header">Social MEDIA groups</h6>

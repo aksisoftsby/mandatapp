@@ -2,3 +2,8 @@
 title: "Mandatapp"
 description: "Simple dan Powerfull aplikasi DPT, chart, Geomap, Pemilu, Quick count, SMS, Tag TPS untuk KPU Kab/kota"
 url: http://mandatapp.com
+
+plugins:
+  - jekyll-avatar
+  - jekyll-redirect-from
+  - jekyll-seo-tag

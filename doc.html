@@ -12,14 +12,20 @@ description: Dokumentasi lengkap dengan Update terbaru dari mandat-app. lengkap 
     <div class="doc-body">
       <div class="doc-content">
         <div class="content-inner">
-          {% include_relative docs/first.html %}
+          <section id="docs-section" class="doc-section">
+            <h2 class="section-title">Dokumentasi dan Tutorial Mandat-app</h2>
+            {% include_relative docs/kecamatan.html %}
+          </section>
+          <section id="update-section" class="doc-section">
+            <h2 class="section-title">Update Mandat-app</h2>
+            {% include_relative docs/update/1.21.html %}
+          </section>
         </div><!--//content-inner-->
       </div><!--//doc-content-->
       <div class="doc-sidebar hidden-xs">
         <nav id="doc-nav">
           <ul id="doc-menu" class="nav doc-menu" data-spy="affix">
-            <li><a class="scrollto" href="#download-section">Download</a></li>
-
+            {% include_relative docs/_menu.html %}
           </ul><!--//doc-menu-->
         </nav>
       </div><!--//doc-sidebar-->
